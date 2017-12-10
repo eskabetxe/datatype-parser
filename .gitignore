@@ -1,0 +1,11 @@
+# ide stuff
+.idea
+*.iml
+.classpath
+.project
+.settings
+
+# maven stuff
+target
+*.class
+
