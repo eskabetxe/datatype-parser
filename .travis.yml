@@ -4,4 +4,4 @@ jdk:
  #- openjdk8
 
 after_success:
- - mvn coveralls:reports
+ - mvn coveralls:report
