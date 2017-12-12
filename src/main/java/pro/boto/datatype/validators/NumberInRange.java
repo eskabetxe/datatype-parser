@@ -3,12 +3,6 @@ package pro.boto.datatype.validators;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-/**
- * Check if number are in a given range
- *
- * @author Cedric Chabanois (cchabanois at gmail.com)
- *
- */
 public class NumberInRange {
 
     public static final BigInteger BYTE_MIN = BigInteger.valueOf(Byte.MIN_VALUE);
@@ -52,8 +46,7 @@ public class NumberInRange {
     public static boolean isInRange(Number number, BigInteger min, BigInteger max) {
         try {
             BigInteger bigInteger = NumberUtils.getBigInteger(number);
-            return max.compareTo(bigInteger) >= 0
-                    && min.compareTo(bigInteger) <= 0;
+            return max.compareTo(bigInteger) >= 0 && min.compareTo(bigInteger) <= 0;
         } catch (NumberFormatException e) {
             return false;
         }
@@ -62,8 +55,7 @@ public class NumberInRange {
     public static boolean isInRange(Number number, BigDecimal min, BigDecimal max) {
         try {
             BigDecimal bigDecimal = NumberUtils.getBigDecimal(number);
-            return max.compareTo(bigDecimal) >= 0
-                    && min.compareTo(bigDecimal) <= 0;
+            return max.compareTo(bigDecimal) >= 0 && min.compareTo(bigDecimal) <= 0;
         } catch (NumberFormatException e) {
             return false;
         }
