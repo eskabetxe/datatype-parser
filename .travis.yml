@@ -4,4 +4,4 @@ jdk:
  #- openjdk8
 
 after_success:
- - mvn jacobo:report coveralls:report
+ - mvn clean test jacobo:report coveralls:report
