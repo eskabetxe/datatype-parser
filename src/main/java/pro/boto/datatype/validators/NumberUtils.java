@@ -20,6 +20,7 @@ public class NumberUtils {
     }
 
     public static BigDecimal getBigDecimal(Number number) {
+        if(!isNumber(number)) return null;
         BigDecimal value = null;
         if (isBigDecimal(number)) value = (BigDecimal) number;
         if (isBigInteger(number)) value = new BigDecimal((BigInteger) number);

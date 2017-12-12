@@ -68,5 +68,11 @@ public class NumberInRangeTest {
         assertFalse(NumberInRange.isInLongRange(Float.POSITIVE_INFINITY));
     }
 
+    @Test
+    public void testBadRequest() {
+        assertFalse(NumberInRange.isInRange(Float.POSITIVE_INFINITY, BigInteger.valueOf(Long.MIN_VALUE), BigInteger.valueOf(Long.MAX_VALUE)));
+        assertFalse(NumberInRange.isInRange(Float.POSITIVE_INFINITY, BigDecimal.valueOf(-Float.MAX_VALUE), BigDecimal.valueOf(Float.MAX_VALUE)));
+    }
+
 
 }

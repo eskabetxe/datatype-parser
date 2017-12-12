@@ -20,7 +20,7 @@ public class Cleaner {
 		if(StringUtils.isEmpty(toTrim)) return null;
 		return StringUtils.trim(toTrim);
 	}
-	
+	/*
 	protected static String toNumber(String value){
 		String toNumber = trim(value);
 		return StringUtils.replace(toNumber, " ", "");
@@ -78,4 +78,5 @@ public class Cleaner {
 		str = str.replaceAll("",""); // to remove "…"
 		return str;
 	}
+	*/
 }
