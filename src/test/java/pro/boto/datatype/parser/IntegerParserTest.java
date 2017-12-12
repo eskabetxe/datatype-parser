@@ -2,45 +2,95 @@ package pro.boto.datatype.parser;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.*;
 
 public class IntegerParserTest {
 
-    @Test
-    public void whenNullValue() {
-        assertThat(null, 0, null);
-    }
+    private Integer INTEGER_0 = new Integer(0);
+    private Integer INTEGER_NULL = null;
 
     @Test
     public void whenNotValidValue() {
-        assertThat(this, 0, null);
+        assertThat(null, INTEGER_0, INTEGER_NULL);
+        assertThat(this, INTEGER_0, INTEGER_NULL);
+    }
+
+    @Test
+    public void whenValue0ThenInteger0() {
+        Integer result = new Integer(0);
+
+        assertThat(new Byte((byte)0), result);
+        assertThat(new Short((short)0), result);
+        assertThat(new Integer((int)0), result);
+        assertThat(new Long((long)0), result);
+        assertThat(new Float((float)0), result);
+        assertThat(new Double((double)0), result);
+    }
+
+    @Test
+    public void whenValueMinus10ThenIntegerMinus10() {
+        Integer result = new Integer(-10);
+
+        assertThat(new Byte((byte)-10), result);
+        assertThat(new Short((short)-10), result);
+        assertThat(new Integer((int)-10), result);
+        assertThat(new Long((long)-10), result);
+        assertThat(new Float((float)-10), result);
+        assertThat(new Double((double)-10), result);
+    }
+
+    @Test
+    public void whenValue10ThenInteger10() {
+        Integer result = new Integer(10);
+
+        assertThat(new Byte((byte)10), result);
+        assertThat(new Short((short)10), result);
+        assertThat(new Integer((int)10), result);
+        assertThat(new Long((long)10), result);
+        assertThat(new Float((float)10), result);
+        assertThat(new Double((double)10), result);
+    }
+
+    @Test
+    public void whenByteValue() {
+        assertThat(Byte.MIN_VALUE, new Integer(Byte.MIN_VALUE));
+        assertThat(Byte.MAX_VALUE, new Integer(Byte.MAX_VALUE));
+    }
+
+    @Test
+    public void whenShortValue() {
+        assertThat(Short.MIN_VALUE, new Integer(Short.MIN_VALUE));
+        assertThat(Short.MAX_VALUE, new Integer(Short.MAX_VALUE));
     }
 
     @Test
     public void whenIntegerValue() {
-        assertThat(Integer.MIN_VALUE, Integer.MIN_VALUE, new Integer(Integer.MIN_VALUE));
-        assertThat(0, 0, new Integer(0));
-        assertThat(Integer.MAX_VALUE, Integer.MAX_VALUE, new Integer(Integer.MAX_VALUE));
+        assertThat(Integer.MIN_VALUE, Integer.MIN_VALUE);
+        assertThat(Integer.MAX_VALUE, Integer.MAX_VALUE);
+    }
+
+    @Test
+    public void whenLongValue() {
+        assertThat(Long.MIN_VALUE, INTEGER_0, INTEGER_NULL);
+        assertThat(Long.MAX_VALUE, INTEGER_0, INTEGER_NULL);
+    }
+    @Test
+    public void whenFloatValue() {
+        assertThat(-Float.MAX_VALUE, INTEGER_0, INTEGER_NULL);
+        assertThat(Float.MAX_VALUE, INTEGER_0, INTEGER_NULL);
     }
 
     @Test
     public void whenDoubleValue() {
-        Double value = Double.MIN_VALUE;
-        assertThat(value, value.intValue(), value.intValue());
-        value = Double.MAX_VALUE;
-        assertThat(value, value.intValue(), value.intValue());
-        for (int i=0; i<10; i++){
-            assertThat(new Double(i), i, new Integer(i));
-        }
+        assertThat(-Double.MAX_VALUE, INTEGER_0, INTEGER_NULL);
+        assertThat(Double.MAX_VALUE, INTEGER_0, INTEGER_NULL);
     }
 
-    @Test
-    public void whenDoubleDecimalValue() {
-        for (int i=0; i<10; i++){
-            assertThat(new Double(1+(i/10)), 1, 1);
-        }
+    private void assertThat(Object value, Integer values) {
+        assertThat(value,values.intValue(),values);
     }
-
     private void assertThat(Object value, int primitive, Integer wrapper) {
         assertEquals("primitive not expected", primitive, IntegerParser.toPrimitive(value));
         assertEquals("wrapper not expected", wrapper, IntegerParser.toInteger(value));

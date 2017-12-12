@@ -1,10 +1,11 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
+import pro.boto.datatype.validators.NumberUtils;
 
-import static pro.boto.datatype.classifiers.Classifier.isByte;
-import static pro.boto.datatype.classifiers.Classifier.isDouble;
-import static pro.boto.datatype.classifiers.Classifier.isNull;
+import static pro.boto.datatype.classifiers.Classifier.*;
+import static pro.boto.datatype.validators.NumberInRange.isInByteRange;
+import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
 
 public class ByteParser {
 
@@ -17,6 +18,9 @@ public class ByteParser {
     public static Byte toByte(Object value) {
         if (isNull(value)) return null;
         if (isByte(value)) return (Byte) value;
+        if (isNumber(value) && isInByteRange((Number)value))
+            return NumberUtils.getBigInteger((Number)value).byteValueExact();
+
         return null;
     }
 }

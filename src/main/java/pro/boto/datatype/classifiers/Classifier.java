@@ -2,6 +2,8 @@ package pro.boto.datatype.classifiers;
 
 import org.apache.commons.lang3.ClassUtils;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 
 public final class Classifier {
@@ -43,6 +45,14 @@ public final class Classifier {
     }
 
     // data types
+    public static boolean isBigDecimal(Object value){
+        return isAssignable(value, BigDecimal.class);
+    }
+
+    public static boolean isBigInteger(Object value){
+        return isAssignable(value, BigInteger.class);
+    }
+
     public static boolean isDate(Object value){
         return isAssignable(value, Date.class);
     }

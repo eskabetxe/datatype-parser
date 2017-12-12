@@ -1,10 +1,11 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
+import pro.boto.datatype.validators.NumberUtils;
 
-import static pro.boto.datatype.classifiers.Classifier.isDouble;
-import static pro.boto.datatype.classifiers.Classifier.isFloat;
-import static pro.boto.datatype.classifiers.Classifier.isNull;
+import static pro.boto.datatype.classifiers.Classifier.*;
+import static pro.boto.datatype.validators.NumberInRange.isInFloatRange;
+import static pro.boto.datatype.validators.NumberInRange.isInLongRange;
 
 public class FloatParser {
 
@@ -17,6 +18,9 @@ public class FloatParser {
     public static Float toFloat(Object value) {
         if (isNull(value)) return null;
         if (isFloat(value)) return (Float) value;
+        if (isNumber(value) && isInFloatRange((Number)value))
+            return NumberUtils.getBigDecimal((Number)value).floatValue();
+
         return null;
     }
 }

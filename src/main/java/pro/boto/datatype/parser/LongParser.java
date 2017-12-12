@@ -1,10 +1,11 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
+import pro.boto.datatype.validators.NumberUtils;
 
-import static pro.boto.datatype.classifiers.Classifier.isFloat;
-import static pro.boto.datatype.classifiers.Classifier.isLong;
-import static pro.boto.datatype.classifiers.Classifier.isNull;
+import static pro.boto.datatype.classifiers.Classifier.*;
+import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
+import static pro.boto.datatype.validators.NumberInRange.isInLongRange;
 
 public class LongParser {
 
@@ -17,6 +18,9 @@ public class LongParser {
     public static Long toLong(Object value) {
         if (isNull(value)) return null;
         if (isLong(value)) return (Long) value;
+        if (isNumber(value) && isInLongRange((Number)value))
+            return NumberUtils.getBigInteger((Number)value).longValueExact();
+
         return null;
     }
 }

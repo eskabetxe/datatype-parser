@@ -1,10 +1,11 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
+import pro.boto.datatype.validators.NumberUtils;
 
-import static pro.boto.datatype.classifiers.Classifier.isLong;
-import static pro.boto.datatype.classifiers.Classifier.isNull;
-import static pro.boto.datatype.classifiers.Classifier.isShort;
+import static pro.boto.datatype.classifiers.Classifier.*;
+import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
+import static pro.boto.datatype.validators.NumberInRange.isInShortRange;
 
 public class ShortParser {
 
@@ -17,6 +18,9 @@ public class ShortParser {
     public static Short toShort(Object value) {
         if (isNull(value)) return null;
         if (isShort(value)) return (Short) value;
+        if (isNumber(value) && isInShortRange((Number)value))
+            return NumberUtils.getBigInteger((Number)value).shortValueExact();
+
         return null;
     }
 }
