@@ -7,6 +7,9 @@ import java.math.BigInteger;
 import java.util.Date;
 
 public final class Classifier {
+
+    private Classifier(){}
+
     protected static boolean isAssignable(Object value, Class<?> eClazz){
         return ClassUtils.isAssignable(value.getClass(), eClazz);
     }

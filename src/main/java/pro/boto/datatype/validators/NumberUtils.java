@@ -22,12 +22,15 @@ public class NumberUtils {
     public static BigDecimal getBigDecimal(Number number) {
         if(!isNumber(number)) return null;
         BigDecimal value = null;
-        if (isBigDecimal(number)) value = (BigDecimal) number;
-        if (isBigInteger(number)) value = new BigDecimal((BigInteger) number);
-        if (isComplementInteger(number)) value = new BigDecimal(number.longValue());
-        if (isFloatingPoint(number)) value = new BigDecimal(number.doubleValue());
-
-        if (isNull(value)) {
+        if (isBigDecimal(number)) {
+            value = (BigDecimal) number;
+        } else if (isBigInteger(number)) {
+            value = new BigDecimal((BigInteger) number);
+        } else if (isComplementInteger(number)) {
+            value = new BigDecimal(number.longValue());
+        } else if (isFloatingPoint(number)) {
+            value = new BigDecimal(number.doubleValue());
+        } else {
             // not a standard number
             value = new BigDecimal(number.doubleValue());
         }
