@@ -8,6 +8,8 @@ import static pro.boto.datatype.validators.NumberInRange.isInFloatRange;
 
 public class FloatParser {
 
+    private FloatParser() {}
+
     private final static float DEFAULT_VALUE = 0.0F;
 
     public static float toPrimitive(Object value) {

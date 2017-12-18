@@ -8,6 +8,8 @@ import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
 
 public class IntegerParser  {
 
+    private IntegerParser() {}
+
     private final static int DEFAULT_VALUE = 0;
 
     public static int toPrimitive(Object value) {

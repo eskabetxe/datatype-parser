@@ -2,6 +2,8 @@ package pro.boto.datatype.parser;
 
 public class NumberParser {
 
+    private NumberParser() {}
+
     public static Byte toByte(Object value) {
         return ByteParser.toByte(value);
     }

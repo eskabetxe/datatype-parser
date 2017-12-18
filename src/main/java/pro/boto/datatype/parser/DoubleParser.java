@@ -8,6 +8,8 @@ import static pro.boto.datatype.validators.NumberInRange.isInDoubleRange;
 
 public class DoubleParser {
 
+    private DoubleParser() {}
+
     private final static double DEFAULT_VALUE = 0D;
 
     public static double toPrimitive(Object value) {

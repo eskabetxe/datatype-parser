@@ -8,6 +8,8 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 
 public class NumberUtils {
 
+    private NumberUtils() {}
+
     public static BigInteger getBigInteger(Number number) {
         return getBigInteger(number, RoundingMode.HALF_EVEN);
     }
@@ -21,7 +23,7 @@ public class NumberUtils {
 
     public static BigDecimal getBigDecimal(Number number) {
         if(!isNumber(number)) return null;
-        BigDecimal value = null;
+        BigDecimal value;
         if (isBigDecimal(number)) {
             value = (BigDecimal) number;
         } else if (isBigInteger(number)) {

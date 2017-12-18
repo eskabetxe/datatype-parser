@@ -5,19 +5,21 @@ import java.math.BigInteger;
 
 public class NumberInRange {
 
-    public static final BigInteger BYTE_MIN = BigInteger.valueOf(Byte.MIN_VALUE);
-    public static final BigInteger BYTE_MAX = BigInteger.valueOf(Byte.MAX_VALUE);
-    public static final BigInteger SHORT_MIN = BigInteger.valueOf(Short.MIN_VALUE);
-    public static final BigInteger SHORT_MAX = BigInteger.valueOf(Short.MAX_VALUE);
-    public static final BigInteger INTEGER_MIN = BigInteger.valueOf(Integer.MIN_VALUE);
-    public static final BigInteger INTEGER_MAX = BigInteger.valueOf(Integer.MAX_VALUE);
-    public static final BigInteger LONG_MIN = BigInteger.valueOf(Long.MIN_VALUE);
-    public static final BigInteger LONG_MAX = BigInteger.valueOf(Long.MAX_VALUE);
+    private NumberInRange() {}
 
-    public static final BigDecimal FLOAT_MAX = BigDecimal.valueOf(Float.MAX_VALUE);
-    public static final BigDecimal FLOAT_MIN = BigDecimal.valueOf(-Float.MAX_VALUE);
-    public static final BigDecimal DOUBLE_MAX = BigDecimal.valueOf(Double.MAX_VALUE);
-    public static final BigDecimal DOUBLE_MIN = BigDecimal.valueOf(-Double.MAX_VALUE);
+    private static final BigInteger BYTE_MIN = BigInteger.valueOf(Byte.MIN_VALUE);
+    private static final BigInteger BYTE_MAX = BigInteger.valueOf(Byte.MAX_VALUE);
+    private static final BigInteger SHORT_MIN = BigInteger.valueOf(Short.MIN_VALUE);
+    private static final BigInteger SHORT_MAX = BigInteger.valueOf(Short.MAX_VALUE);
+    private static final BigInteger INTEGER_MIN = BigInteger.valueOf(Integer.MIN_VALUE);
+    private static final BigInteger INTEGER_MAX = BigInteger.valueOf(Integer.MAX_VALUE);
+    private static final BigInteger LONG_MIN = BigInteger.valueOf(Long.MIN_VALUE);
+    private static final BigInteger LONG_MAX = BigInteger.valueOf(Long.MAX_VALUE);
+
+    private static final BigDecimal FLOAT_MAX = BigDecimal.valueOf(Float.MAX_VALUE);
+    private static final BigDecimal FLOAT_MIN = BigDecimal.valueOf(-Float.MAX_VALUE);
+    private static final BigDecimal DOUBLE_MAX = BigDecimal.valueOf(Double.MAX_VALUE);
+    private static final BigDecimal DOUBLE_MIN = BigDecimal.valueOf(-Double.MAX_VALUE);
 
     public static boolean isInByteRange(Number number) {
         return isInRange(number, BYTE_MIN, BYTE_MAX);

@@ -8,6 +8,8 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 
 public class BooleanParser {
 
+    private BooleanParser() {}
+
     private final static boolean DEFAULT_VALUE = false;
 
     public static boolean toPrimitive(Object value) {

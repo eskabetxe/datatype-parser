@@ -8,6 +8,8 @@ import static pro.boto.datatype.validators.NumberInRange.isInByteRange;
 
 public class ByteParser {
 
+    private ByteParser() {}
+
     private final static byte DEFAULT_VALUE = 0;
 
     public static byte toPrimitive(Object value) {

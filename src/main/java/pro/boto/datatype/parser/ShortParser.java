@@ -8,6 +8,8 @@ import static pro.boto.datatype.validators.NumberInRange.isInShortRange;
 
 public class ShortParser {
 
+    private ShortParser() {}
+
     private final static short DEFAULT_VALUE = 0;
 
     public static long toPrimitive(Object value) {
