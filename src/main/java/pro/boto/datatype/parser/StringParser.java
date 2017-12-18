@@ -1,6 +1,5 @@
 package pro.boto.datatype.parser;
 
-import static pro.boto.datatype.classifiers.Classifier.isInteger;
 import static pro.boto.datatype.classifiers.Classifier.isString;
 
 public class StringParser {

@@ -2,7 +2,6 @@ package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
 
-import static pro.boto.datatype.classifiers.Classifier.isByte;
 import static pro.boto.datatype.classifiers.Classifier.isChar;
 import static pro.boto.datatype.classifiers.Classifier.isNull;
 

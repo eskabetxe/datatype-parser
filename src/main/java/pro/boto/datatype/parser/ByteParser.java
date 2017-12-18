@@ -5,7 +5,6 @@ import pro.boto.datatype.validators.NumberUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
 import static pro.boto.datatype.validators.NumberInRange.isInByteRange;
-import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
 
 public class ByteParser {
 

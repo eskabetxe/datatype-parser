@@ -1,12 +1,12 @@
 package pro.boto.datatype.validators;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import org.junit.Test;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class NumberInRangeTest {
 
@@ -73,6 +73,5 @@ public class NumberInRangeTest {
         assertFalse(NumberInRange.isInRange(Float.POSITIVE_INFINITY, BigInteger.valueOf(Long.MIN_VALUE), BigInteger.valueOf(Long.MAX_VALUE)));
         assertFalse(NumberInRange.isInRange(Float.POSITIVE_INFINITY, BigDecimal.valueOf(-Float.MAX_VALUE), BigDecimal.valueOf(Float.MAX_VALUE)));
     }
-
 
 }

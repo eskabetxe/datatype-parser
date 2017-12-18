@@ -5,7 +5,6 @@ import pro.boto.datatype.validators.NumberUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
 import static pro.boto.datatype.validators.NumberInRange.isInFloatRange;
-import static pro.boto.datatype.validators.NumberInRange.isInLongRange;
 
 public class FloatParser {
 

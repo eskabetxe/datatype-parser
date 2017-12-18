@@ -1,10 +1,10 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
-import static pro.boto.datatype.validators.NumberInRange.*;
 import pro.boto.datatype.validators.NumberUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
+import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
 
 public class IntegerParser  {
 

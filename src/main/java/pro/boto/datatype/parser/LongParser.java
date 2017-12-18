@@ -4,7 +4,6 @@ import org.apache.commons.lang3.ObjectUtils;
 import pro.boto.datatype.validators.NumberUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
-import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
 import static pro.boto.datatype.validators.NumberInRange.isInLongRange;
 
 public class LongParser {

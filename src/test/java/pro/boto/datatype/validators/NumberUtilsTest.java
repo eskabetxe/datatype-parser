@@ -1,13 +1,11 @@
 package pro.boto.datatype.validators;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class NumberUtilsTest {
 
