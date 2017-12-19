@@ -25,8 +25,8 @@ public class BooleanParser {
         } else if (isInteger(value) || isDouble(value)) {
             valid = toBooleanObject(IntegerParser.toInteger(value));
         } else if (isString(value)) {
-            String sValue = Cleaner.trim((String)value);
-            valid = toBooleanObject(StringParser.toString(value));
+            String trimValue = Cleaner.trim((String)value);
+            valid = toBooleanObject(StringParser.toString(trimValue));
         }
         return valid;
     }
