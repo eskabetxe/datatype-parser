@@ -8,9 +8,9 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 
 public class BooleanParser {
 
-    private BooleanParser() {}
-
     private final static boolean DEFAULT_VALUE = false;
+
+    private BooleanParser() {}
 
     public static boolean toPrimitive(Object value) {
         return ObjectUtils.defaultIfNull(toBoolean(value), DEFAULT_VALUE);

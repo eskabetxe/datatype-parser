@@ -5,8 +5,6 @@ import java.math.BigInteger;
 
 public class NumberInRange {
 
-    private NumberInRange() {}
-
     private static final BigInteger BYTE_MIN = BigInteger.valueOf(Byte.MIN_VALUE);
     private static final BigInteger BYTE_MAX = BigInteger.valueOf(Byte.MAX_VALUE);
     private static final BigInteger SHORT_MIN = BigInteger.valueOf(Short.MIN_VALUE);
@@ -20,6 +18,8 @@ public class NumberInRange {
     private static final BigDecimal FLOAT_MIN = BigDecimal.valueOf(-Float.MAX_VALUE);
     private static final BigDecimal DOUBLE_MAX = BigDecimal.valueOf(Double.MAX_VALUE);
     private static final BigDecimal DOUBLE_MIN = BigDecimal.valueOf(-Double.MAX_VALUE);
+
+    private NumberInRange() {}
 
     public static boolean isInByteRange(Number number) {
         return isInRange(number, BYTE_MIN, BYTE_MAX);

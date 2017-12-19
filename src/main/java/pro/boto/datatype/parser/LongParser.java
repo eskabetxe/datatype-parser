@@ -8,9 +8,9 @@ import static pro.boto.datatype.validators.NumberInRange.isInLongRange;
 
 public class LongParser {
 
-    private LongParser() {}
-
     private final static long DEFAULT_VALUE = 0L;
+
+    private LongParser() {}
 
     public static long toPrimitive(Object value) {
         return ObjectUtils.defaultIfNull(toLong(value), DEFAULT_VALUE);

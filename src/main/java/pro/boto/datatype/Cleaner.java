@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class Cleaner {
 
-	private static Pattern NUMBER = Pattern.compile("^((-|\\+)?(\\d+)((,|\\.)(\\d+))?)$");
+	//private static Pattern NUMBER = Pattern.compile("^((-|\\+)?(\\d+)((,|\\.)(\\d+))?)$");
 	
 	public static String trim(String value){
 		String toTrim = StringUtils.trim(value);

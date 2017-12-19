@@ -7,9 +7,9 @@ import static pro.boto.datatype.classifiers.Classifier.isNull;
 
 public class CharParser {
 
-    private CharParser() {}
-
     private final static char DEFAULT_VALUE = '\u0000';
+
+    private CharParser() {}
 
     public static char toPrimitive(Object value) {
         return ObjectUtils.defaultIfNull(toChar(value), DEFAULT_VALUE);
