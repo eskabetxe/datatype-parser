@@ -6,13 +6,13 @@ import static org.junit.Assert.assertEquals;
 
 public class ByteParserTest {
 
-    private Byte SHORT_0 = new Byte((byte)0);
-    private Byte SHORT_NULL = null;
+    private Byte BYTE_0 = new Byte((byte)0);
+    private Byte BYTE_NULL = null;
 
     @Test
     public void whenNotValidValue() {
-        assertThat(null, SHORT_0, SHORT_NULL);
-        assertThat(this, SHORT_0, SHORT_NULL);
+        assertThat(null, BYTE_0, BYTE_NULL);
+        assertThat(this, BYTE_0, BYTE_NULL);
     }
 
     @Test
@@ -59,32 +59,32 @@ public class ByteParserTest {
 
     @Test
     public void whenShortValue() {
-        assertThat(Short.MIN_VALUE, SHORT_0, SHORT_NULL);
-        assertThat(Short.MAX_VALUE, SHORT_0, SHORT_NULL);
+        assertThat(Short.MIN_VALUE, BYTE_0, BYTE_NULL);
+        assertThat(Short.MAX_VALUE, BYTE_0, BYTE_NULL);
     }
 
     @Test
     public void whenIntegerValue() {
-        assertThat(Integer.MIN_VALUE, SHORT_0, SHORT_NULL);
-        assertThat(Integer.MAX_VALUE, SHORT_0, SHORT_NULL);
+        assertThat(Integer.MIN_VALUE, BYTE_0, BYTE_NULL);
+        assertThat(Integer.MAX_VALUE, BYTE_0, BYTE_NULL);
     }
 
     @Test
     public void whenLongValue() {
-        assertThat(Long.MIN_VALUE, SHORT_0, SHORT_NULL);
-        assertThat(Long.MAX_VALUE, SHORT_0, SHORT_NULL);
+        assertThat(Long.MIN_VALUE, BYTE_0, BYTE_NULL);
+        assertThat(Long.MAX_VALUE, BYTE_0, BYTE_NULL);
     }
 
     @Test
     public void whenFloatValue() {
-        assertThat(-Float.MAX_VALUE, SHORT_0, SHORT_NULL);
-        assertThat(Float.MAX_VALUE, SHORT_0, SHORT_NULL);
+        assertThat(-Float.MAX_VALUE, BYTE_0, BYTE_NULL);
+        assertThat(Float.MAX_VALUE, BYTE_0, BYTE_NULL);
     }
 
     @Test
     public void whenDoubleValue() {
-        assertThat(-Double.MAX_VALUE, SHORT_0, SHORT_NULL);
-        assertThat(Double.MAX_VALUE, SHORT_0, SHORT_NULL);
+        assertThat(-Double.MAX_VALUE, BYTE_0, BYTE_NULL);
+        assertThat(Double.MAX_VALUE, BYTE_0, BYTE_NULL);
     }
 
     private void assertThat(Object value, Byte values) {
