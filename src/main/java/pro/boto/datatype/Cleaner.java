@@ -2,8 +2,6 @@ package pro.boto.datatype;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.regex.Pattern;
-
 public class Cleaner {
 
 	//private static Pattern NUMBER = Pattern.compile("^((-|\\+)?(\\d+)((,|\\.)(\\d+))?)$");
