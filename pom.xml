@@ -142,7 +142,7 @@
                 <artifactId>codacy-maven-plugin</artifactId>
                 <version>1.0.3</version>
                 <configuration>
-                    <coverageReportFile>${project.reporting.outputDirectory}/jacoco.exec</coverageReportFile>
+                    <coverageReportFile>${project.reporting.outputDirectory}/site/jacoco/jacoco.xml</coverageReportFile>
                     <failOnMissingReportFile>false</failOnMissingReportFile>
                 </configuration>
                 <executions>
