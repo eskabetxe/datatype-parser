@@ -4,5 +4,5 @@ jdk:
  #- openjdk8
 
 after_success:
- - mvn clean test jacoco:report coveralls:report
- #- mvn clean test jacoco:report codacy:coverage -DapiToken=$CODACY_PROJECT_TOKEN
+ - mvn clean verify jacoco:report coveralls:report
+ - mvn clean verify jacoco:report codacy:coverage

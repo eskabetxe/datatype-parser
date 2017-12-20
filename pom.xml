@@ -141,6 +141,7 @@
                 <configuration>
                     <coverageReportFile>target/site/jacoco/jacoco.xml</coverageReportFile>
                     <failOnMissingReportFile>false</failOnMissingReportFile>
+                    <apiToken>CODACY_PROJECT_TOKEN</apiToken>
                 </configuration>
                 <executions>
                     <execution>
