@@ -1,7 +1,6 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
-import pro.boto.datatype.Cleaner;
 
 import static org.apache.commons.lang3.BooleanUtils.toBooleanObject;
 import static pro.boto.datatype.classifiers.Classifier.*;
@@ -22,11 +21,10 @@ public class BooleanParser {
         Boolean valid = null;
         if (isBoolean(value)) {
             valid = (Boolean) value;
-        } else if (isInteger(value) || isDouble(value)) {
-            valid = toBooleanObject(IntegerParser.toInteger(value));
+        } else if (isNumber(value)) {
+            valid = toBooleanObject(NumberParser.toInteger(value));
         } else if (isString(value)) {
-            String trimValue = Cleaner.trim((String)value);
-            valid = toBooleanObject(StringParser.toString(trimValue));
+            valid = toBooleanObject((String)value);
         }
         return valid;
     }

@@ -1,10 +1,10 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
-import pro.boto.datatype.validators.NumberUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
-import static pro.boto.datatype.validators.NumberInRange.isInFloatRange;
+import static pro.boto.datatype.parser.NumberParser.isInFloatRange;
+import static pro.boto.datatype.parser.NumberParser.toBigDecimal;
 
 public class FloatParser {
 
@@ -20,7 +20,7 @@ public class FloatParser {
         if (isNull(value)) return null;
         if (isFloat(value)) return (Float) value;
         if (isNumber(value) && isInFloatRange((Number)value))
-            return NumberUtils.getBigDecimal((Number)value).floatValue();
+            return toBigDecimal(value).floatValue();
 
         return null;
     }

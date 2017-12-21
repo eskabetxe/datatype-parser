@@ -1,10 +1,10 @@
 package pro.boto.datatype.parser;
 
 import org.apache.commons.lang3.ObjectUtils;
-import pro.boto.datatype.validators.NumberUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
-import static pro.boto.datatype.validators.NumberInRange.isInIntegerRange;
+import static pro.boto.datatype.parser.NumberParser.isInIntegerRange;
+import static pro.boto.datatype.parser.NumberParser.toBigInteger;
 
 public class IntegerParser  {
 
@@ -20,7 +20,7 @@ public class IntegerParser  {
         if (isNull(value)) return null;
         if (isInteger(value)) return (Integer) value;
         if (isNumber(value) && isInIntegerRange((Number)value))
-            return NumberUtils.getBigInteger((Number)value).intValueExact();
+            return toBigInteger(value).intValueExact();
 
         return null;
     }

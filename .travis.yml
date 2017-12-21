@@ -4,5 +4,5 @@ jdk:
  #- openjdk8
 
 after_success:
- - mvn clean verify jacoco:report coveralls:report
- - mvn clean verify jacoco:report codacy:coverage
+ - mvn clean verify -Ptravis jacoco:report coveralls:report
+ - mvn clean verify -Ptravis jacoco:report codacy:coverage

@@ -95,65 +95,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.9</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <!-- Sets the path to the file which contains the execution data. -->
-                            <dataFile>target/jacoco.exec</dataFile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        <!--    <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.7</version>
-                <configuration>
-                    <format>xml</format>
-                    <maxmem>256m</maxmem>
-                    <aggregate>true</aggregate>
-                </configuration>
-            </plugin> -->
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.3.0</version>
-            </plugin>
-            <plugin>
-                <groupId>com.gavinmogan</groupId>
-                <artifactId>codacy-maven-plugin</artifactId>
-                <version>1.0.3</version>
-                <configuration>
-                    <coverageReportFile>target/site/jacoco/jacoco.xml</coverageReportFile>
-                    <failOnMissingReportFile>false</failOnMissingReportFile>
-                    <apiToken>CODACY_PROJECT_TOKEN</apiToken>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>coverage</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>coverage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -186,6 +127,70 @@
     </build>
 
     <profiles>
+        <profile>
+            <id>travis</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.7.9</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                                <configuration>
+                                    <!-- Sets the path to the file which contains the execution data. -->
+                                    <dataFile>target/jacoco.exec</dataFile>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!--    <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>cobertura-maven-plugin</artifactId>
+                            <version>2.7</version>
+                            <configuration>
+                                <format>xml</format>
+                                <maxmem>256m</maxmem>
+                                <aggregate>true</aggregate>
+                            </configuration>
+                        </plugin> -->
+                    <plugin>
+                        <groupId>org.eluder.coveralls</groupId>
+                        <artifactId>coveralls-maven-plugin</artifactId>
+                        <version>4.3.0</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.gavinmogan</groupId>
+                        <artifactId>codacy-maven-plugin</artifactId>
+                        <version>1.0.3</version>
+                        <configuration>
+                            <coverageReportFile>target/site/jacoco/jacoco.xml</coverageReportFile>
+                            <failOnMissingReportFile>false</failOnMissingReportFile>
+                            <apiToken>CODACY_PROJECT_TOKEN</apiToken>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>coverage</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>coverage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>release</id>
             <build>

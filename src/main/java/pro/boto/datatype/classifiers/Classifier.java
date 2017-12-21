@@ -72,4 +72,5 @@ public class Classifier {
     public static boolean isNull(Object value){
         return value == null;
     }
+
 }
