@@ -1,9 +1,12 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@RunWith(JUnitPlatform.class)
 public class IntegerParserTest {
 
     private Integer INTEGER_0 = new Integer(0);
@@ -90,8 +93,8 @@ public class IntegerParserTest {
         assertThat(value,values.intValue(),values);
     }
     private void assertThat(Object value, int primitive, Integer wrapper) {
-        assertEquals("primitive not expected", primitive, IntegerParser.toPrimitive(value));
-        assertEquals("wrapper not expected", wrapper, IntegerParser.toInteger(value));
+        assertEquals(primitive, IntegerParser.toPrimitive(value), "primitive not expected");
+        assertEquals(wrapper, IntegerParser.toInteger(value), "wrapper not expected");
     }
 
 

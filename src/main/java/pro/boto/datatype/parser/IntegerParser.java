@@ -8,7 +8,7 @@ import static pro.boto.datatype.parser.NumberParser.toBigInteger;
 
 public class IntegerParser  {
 
-    private final static int DEFAULT_VALUE = 0;
+    private static final int DEFAULT_VALUE = 0;
 
     private IntegerParser() {}
 

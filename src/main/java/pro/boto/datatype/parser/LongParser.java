@@ -8,7 +8,7 @@ import static pro.boto.datatype.parser.NumberParser.toBigInteger;
 
 public class LongParser {
 
-    private final static long DEFAULT_VALUE = 0L;
+    private static final long DEFAULT_VALUE = 0L;
 
     private LongParser() {}
 

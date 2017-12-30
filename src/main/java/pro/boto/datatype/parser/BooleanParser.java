@@ -5,9 +5,9 @@ import org.apache.commons.lang3.ObjectUtils;
 import static org.apache.commons.lang3.BooleanUtils.toBooleanObject;
 import static pro.boto.datatype.classifiers.Classifier.*;
 
-public class BooleanParser {
+public final class BooleanParser {
 
-    private final static boolean DEFAULT_VALUE = false;
+    private static final boolean DEFAULT_VALUE = false;
 
     private BooleanParser() {}
 

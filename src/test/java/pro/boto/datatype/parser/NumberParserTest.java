@@ -1,61 +1,64 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
+@RunWith(JUnitPlatform.class)
 public class NumberParserTest {
 
     @Test
     public void whenByteValue() {
-        assertEquals("value not expected", (Byte)Byte.MIN_VALUE, NumberParser.toByte(Byte.MIN_VALUE));
-        assertEquals("value not expected", (Byte)Byte.MAX_VALUE, NumberParser.toByte(Byte.MAX_VALUE));
+        assertEquals((Byte)Byte.MIN_VALUE, NumberParser.toByte(Byte.MIN_VALUE));
+        assertEquals((Byte)Byte.MAX_VALUE, NumberParser.toByte(Byte.MAX_VALUE));
     }
 
     @Test
     public void whenShortValue() {
-        assertEquals("value not expected", (Short)Short.MIN_VALUE, NumberParser.toShort(Short.MIN_VALUE));
-        assertEquals("value not expected", (Short)Short.MAX_VALUE, NumberParser.toShort(Short.MAX_VALUE));
+        assertEquals((Short)Short.MIN_VALUE, NumberParser.toShort(Short.MIN_VALUE));
+        assertEquals((Short)Short.MAX_VALUE, NumberParser.toShort(Short.MAX_VALUE));
     }
 
     @Test
     public void whenIntegerValue() {
-        assertEquals("value not expected", (Integer)Integer.MIN_VALUE, NumberParser.toInteger(Integer.MIN_VALUE));
-        assertEquals("value not expected", (Integer)Integer.MAX_VALUE, NumberParser.toInteger(Integer.MAX_VALUE));
+        assertEquals((Integer)Integer.MIN_VALUE, NumberParser.toInteger(Integer.MIN_VALUE));
+        assertEquals((Integer)Integer.MAX_VALUE, NumberParser.toInteger(Integer.MAX_VALUE));
     }
 
     @Test
     public void whenLongValue() {
-        assertEquals("value not expected", (Long)Long.MIN_VALUE, NumberParser.toLong(Long.MIN_VALUE));
-        assertEquals("value not expected", (Long)Long.MIN_VALUE, NumberParser.toLong(Long.MIN_VALUE));
+        assertEquals((Long)Long.MIN_VALUE, NumberParser.toLong(Long.MIN_VALUE));
+        assertEquals((Long)Long.MIN_VALUE, NumberParser.toLong(Long.MIN_VALUE));
     }
     @Test
     public void whenFloatValue() {
-        assertEquals("value not expected", (Float)(-Float.MAX_VALUE), NumberParser.toFloat(-Float.MAX_VALUE), 0);
-        assertEquals("value not expected", (Float)Float.MAX_VALUE, NumberParser.toFloat(Float.MAX_VALUE), 0);
+        assertEquals((Float)(-Float.MAX_VALUE), NumberParser.toFloat(-Float.MAX_VALUE));
+        assertEquals((Float)Float.MAX_VALUE, NumberParser.toFloat(Float.MAX_VALUE));
     }
 
     @Test
     public void whenDoubleValue() {
-        assertEquals("value not expected", (Double)(-Double.MAX_VALUE), NumberParser.toDouble(-Double.MAX_VALUE), 0);
-        assertEquals("value not expected", (Double)Double.MAX_VALUE, NumberParser.toDouble(Double.MAX_VALUE), 0);
+        assertEquals((Double)(-Double.MAX_VALUE), NumberParser.toDouble(-Double.MAX_VALUE));
+        assertEquals((Double)Double.MAX_VALUE, NumberParser.toDouble(Double.MAX_VALUE));
     }
 
     @Test
     public void whenBigDecimal() {
-        BigDecimal result = new BigDecimal(10);
-
+        BigDecimal result = BigDecimal.valueOf(10);
         assertEquals(result, NumberParser.toBigDecimal(new Byte((byte)10)));
         assertEquals(result, NumberParser.toBigDecimal(new Short((short)10)));
         assertEquals(result, NumberParser.toBigDecimal(new Integer((int)10)));
         assertEquals(result, NumberParser.toBigDecimal(new Long((long)10)));
+        assertEquals(result, NumberParser.toBigDecimal(BigInteger.valueOf(10)));
+        result = BigDecimal.valueOf(10D);
         assertEquals(result, NumberParser.toBigDecimal(new Float((float)10)));
         assertEquals(result, NumberParser.toBigDecimal(new Double((double)10)));
-        assertEquals(result, NumberParser.toBigDecimal(BigInteger.valueOf(10)));
     }
 
     @Test
@@ -84,7 +87,7 @@ public class NumberParserTest {
 
     @Test
     public void whenNotValidNumber() {
-        assertEquals(new BigDecimal(100),NumberParser.toBigDecimal(new AtomicInteger(100)));
+        assertEquals(BigDecimal.valueOf(100D),NumberParser.toBigDecimal(new AtomicInteger(100)));
     }
 
     @Test

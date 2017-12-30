@@ -8,7 +8,7 @@ import static pro.boto.datatype.parser.NumberParser.toBigDecimal;
 
 public class DoubleParser {
 
-    private final static double DEFAULT_VALUE = 0D;
+    private static final double DEFAULT_VALUE = 0D;
 
     private DoubleParser() {}
 

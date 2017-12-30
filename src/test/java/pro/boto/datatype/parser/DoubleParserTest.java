@@ -1,9 +1,14 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import java.math.BigDecimal;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@RunWith(JUnitPlatform.class)
 public class DoubleParserTest {
 
     private Double DOUBLE_0 = new Double(0);
@@ -13,6 +18,8 @@ public class DoubleParserTest {
     public void whenNotValidValue() {
         assertThat(null, DOUBLE_0, DOUBLE_NULL);
         assertThat(this, DOUBLE_0, DOUBLE_NULL);
+        assertThat(BigDecimal.valueOf(Double.MAX_VALUE)
+                             .add(BigDecimal.valueOf(1D)), DOUBLE_0, DOUBLE_NULL);
     }
 
     @Test
@@ -88,11 +95,12 @@ public class DoubleParserTest {
     }
 
     private void assertThat(Object value, Double values) {
-        assertThat(value,values.doubleValue(),values);
+        assertThat(value, values.doubleValue(), values);
     }
+
     private void assertThat(Object value, double primitive, Double wrapper) {
-        assertEquals("primitive not expected", primitive, DoubleParser.toPrimitive(value), 0);
-        assertEquals("wrapper not expected", wrapper, DoubleParser.toDouble(value));
+        assertEquals(primitive, DoubleParser.toPrimitive(value), "primitive not expected");
+        assertEquals(wrapper, DoubleParser.toDouble(value), "wrapper not expected");
     }
 
 

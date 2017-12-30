@@ -1,9 +1,12 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@RunWith(JUnitPlatform.class)
 public class LongParserTest {
 
     private Long LONG_0 = new Long(0);
@@ -91,8 +94,8 @@ public class LongParserTest {
         assertThat(value,values.longValue(),values);
     }
     private void assertThat(Object value, long primitive, Long wrapper) {
-        assertEquals("primitive not expected", primitive, LongParser.toPrimitive(value));
-        assertEquals("wrapper not expected", wrapper, LongParser.toLong(value));
+        assertEquals(primitive, LongParser.toPrimitive(value), "primitive not expected");
+        assertEquals(wrapper, LongParser.toLong(value), "wrapper not expected");
     }
 
 

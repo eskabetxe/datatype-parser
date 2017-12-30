@@ -1,9 +1,12 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@RunWith(JUnitPlatform.class)
 public class ShortParserTest {
 
     private Short SHORT_0 = new Short((short)0);
@@ -91,8 +94,8 @@ public class ShortParserTest {
         assertThat(value,values.shortValue(),values);
     }
     private void assertThat(Object value, short primitive, Short wrapper) {
-        assertEquals("primitive not expected", primitive, ShortParser.toPrimitive(value));
-        assertEquals("wrapper not expected", wrapper, ShortParser.toShort(value));
+        assertEquals(primitive, ShortParser.toPrimitive(value), "primitive not expected");
+        assertEquals(wrapper, ShortParser.toShort(value), "wrapper not expected");
     }
 
 

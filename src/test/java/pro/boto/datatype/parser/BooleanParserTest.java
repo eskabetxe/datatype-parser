@@ -1,9 +1,12 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@RunWith(JUnitPlatform.class)
 public class BooleanParserTest {
 
     @Test
@@ -49,9 +52,8 @@ public class BooleanParserTest {
 
 
     private void assertThat(Object value, boolean primitive, Boolean wrapper) {
-        assertEquals("primitive not expected", primitive, BooleanParser.toPrimitive(value));
-        assertEquals("wrapper not expected", wrapper, BooleanParser.toBoolean(value));
+        assertEquals(primitive, BooleanParser.toPrimitive(value), "primitive not expected");
+        assertEquals(wrapper, BooleanParser.toBoolean(value), "wrapper not expected");
     }
-
 
 }

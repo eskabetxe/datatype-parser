@@ -1,9 +1,12 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@RunWith(JUnitPlatform.class)
 public class CharParserTest {
 
     @Test
@@ -22,8 +25,8 @@ public class CharParserTest {
     }
 
     private void assertThat(Object value, char primitive, Character wrapper) {
-        assertEquals("primitive not expected", primitive, CharParser.toPrimitive(value));
-        assertEquals("wrapper not expected", wrapper, CharParser.toChar(value));
+        assertEquals(primitive, CharParser.toPrimitive(value), "primitive not expected");
+        assertEquals(wrapper, CharParser.toChar(value), "wrapper not expected");
     }
 
 

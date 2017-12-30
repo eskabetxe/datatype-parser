@@ -8,7 +8,7 @@ import static pro.boto.datatype.parser.NumberParser.toBigDecimal;
 
 public class FloatParser {
 
-    private final static float DEFAULT_VALUE = 0.0F;
+    private static final float DEFAULT_VALUE = 0.0F;
 
     private FloatParser() {}
 

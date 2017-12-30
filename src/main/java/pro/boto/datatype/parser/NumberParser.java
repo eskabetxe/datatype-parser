@@ -107,12 +107,14 @@ public class NumberParser {
     }
 
     public static BigInteger toBigInteger(Object value, RoundingMode mode) {
-        if(isNull(value) || !isNumber(value)) {
-            return null;
+        if (isNull(value) || isBigInteger(value)) {
+            return (BigInteger) value;
         }
 
-        if (isBigInteger(value)) return (BigInteger) value;
-        return toBigDecimal(value)
+        BigDecimal converted = toBigDecimal(value);
+        if (isNull(converted)) return null;
+
+        return converted
                 .setScale(0, mode)
                 .toBigInteger();
     }
@@ -128,12 +130,12 @@ public class NumberParser {
         } else if (isBigInteger(value)) {
             number = new BigDecimal((BigInteger) value);
         } else if (isComplementInteger(value)) {
-            number = new BigDecimal(((Number)value).longValue());
+            number = BigDecimal.valueOf(((Number)value).longValue());
         } else if (isFloatingPoint(value)) {
-            number = new BigDecimal(((Number)value).doubleValue());
+            number = BigDecimal.valueOf(((Number)value).doubleValue());
         } else {
             // not a standard number
-            number = new BigDecimal(((Number)value).doubleValue());
+            number = BigDecimal.valueOf(((Number)value).doubleValue());
         }
         return number;
     }

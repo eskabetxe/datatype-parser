@@ -1,9 +1,12 @@
 package pro.boto.datatype.parser;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@RunWith(JUnitPlatform.class)
 public class FloatParserTest {
 
     private Float FLOAT_0 = new Float(0);
@@ -88,11 +91,11 @@ public class FloatParserTest {
     }
 
     private void assertThat(Object value, Float values) {
-        assertThat(value,values.floatValue(),values);
+        assertThat(value, values.floatValue(), values);
     }
     private void assertThat(Object value, float primitive, Float wrapper) {
-        assertEquals("primitive not expected", primitive, FloatParser.toPrimitive(value), 0);
-        assertEquals("wrapper not expected", wrapper, FloatParser.toFloat(value));
+        assertEquals(primitive, FloatParser.toPrimitive(value), "primitive not expected");
+        assertEquals(wrapper, FloatParser.toFloat(value), "wrapper not expected");
     }
 
 

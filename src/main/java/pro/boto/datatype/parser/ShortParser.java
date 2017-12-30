@@ -8,7 +8,7 @@ import static pro.boto.datatype.parser.NumberParser.toBigInteger;
 
 public class ShortParser {
 
-    private final static short DEFAULT_VALUE = 0;
+    private static final short DEFAULT_VALUE = 0;
 
     private ShortParser() {}
 
