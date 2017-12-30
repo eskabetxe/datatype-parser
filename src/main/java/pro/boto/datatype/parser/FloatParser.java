@@ -17,11 +17,15 @@ public class FloatParser {
     }
 
     public static Float toFloat(Object value) {
-        if (isNull(value)) return null;
-        if (isFloat(value)) return (Float) value;
-        if (isNumber(value) && isInFloatRange((Number)value))
-            return toBigDecimal(value).floatValue();
+        if (isNull(value) || isFloat(value)) {
+            return (Float) value;
+        }
 
-        return null;
+        Float converted = null;
+        if (isNumber(value) && isInFloatRange((Number)value)) {
+            converted = toBigDecimal(value).floatValue();
+        }
+
+        return converted;
     }
 }

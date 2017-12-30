@@ -17,11 +17,15 @@ public class LongParser {
     }
 
     public static Long toLong(Object value) {
-        if (isNull(value)) return null;
-        if (isLong(value)) return (Long) value;
-        if (isNumber(value) && isInLongRange((Number)value))
-            return toBigInteger(value).longValueExact();
+        if (isNull(value) || isLong(value)) {
+            return (Long) value;
+        }
 
-        return null;
+        Long converted = null;
+        if (isNumber(value) && isInLongRange((Number)value)) {
+            converted = toBigInteger(value).longValueExact();
+        }
+
+        return converted;
     }
 }

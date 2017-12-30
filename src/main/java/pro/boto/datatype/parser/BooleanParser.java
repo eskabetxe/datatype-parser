@@ -16,17 +16,17 @@ public class BooleanParser {
     }
 
     public static Boolean toBoolean(Object value){
-        if (isNull(value)) return null;
-
-        Boolean valid = null;
-        if (isBoolean(value)) {
-            valid = (Boolean) value;
-        } else if (isNumber(value)) {
-            valid = toBooleanObject(NumberParser.toInteger(value));
-        } else if (isString(value)) {
-            valid = toBooleanObject((String)value);
+        if (isNull(value) || isBoolean(value)) {
+            return (Boolean) value;
         }
-        return valid;
+
+        Boolean converted = null;
+        if (isNumber(value)) {
+            converted = toBooleanObject(NumberParser.toInteger(value));
+        } else if (isString(value)) {
+            converted = toBooleanObject((String)value);
+        }
+        return converted;
     }
 
 }

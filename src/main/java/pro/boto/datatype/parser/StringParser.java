@@ -13,6 +13,7 @@ public class StringParser {
         if (isNull(value) || isString(value)) {
             return (String) value;
         }
+
         String converted = null;
         if (isComplementInteger(value)) {
             converted = NumberFormat.getInstance().format(toBigInteger(value));
@@ -20,6 +21,6 @@ public class StringParser {
             converted = NumberFormat.getInstance().format(toBigDecimal(value));
         }
 
-        return isNull(converted)?converted:converted.trim();
+        return converted;
     }
 }

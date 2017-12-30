@@ -16,8 +16,9 @@ public class CharParser {
     }
 
     public static Character toChar(Object value) {
-        if (isNull(value)) return null;
-        if (isChar(value)) return (Character) value;
+        if (isNull(value) || isChar(value)) {
+            return (Character) value;
+        }
         return null;
     }
 }

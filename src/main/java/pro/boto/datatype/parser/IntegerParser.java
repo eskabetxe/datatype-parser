@@ -17,12 +17,16 @@ public class IntegerParser  {
     }
 
     public static Integer toInteger(Object value) {
-        if (isNull(value)) return null;
-        if (isInteger(value)) return (Integer) value;
-        if (isNumber(value) && isInIntegerRange((Number)value))
-            return toBigInteger(value).intValueExact();
+        if (isNull(value) || isInteger(value)) {
+            return (Integer) value;
+        }
 
-        return null;
+        Integer converted = null;
+        if (isNumber(value) && isInIntegerRange((Number)value)) {
+            converted = toBigInteger(value).intValueExact();
+        }
+
+        return converted;
     }
 
 }

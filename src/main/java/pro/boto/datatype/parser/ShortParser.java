@@ -20,13 +20,12 @@ public class ShortParser {
         if (isNull(value) || isShort(value)) {
             return (Short) value;
         }
+
+        Short converted = null;
         if (isNumber(value) && isInShortRange((Number)value)) {
-            return toBigInteger(value).shortValueExact();
-        }
-        if (isString(value)) {
-
+            converted = toBigInteger(value).shortValueExact();
         }
 
-        return null;
+        return converted;
     }
 }

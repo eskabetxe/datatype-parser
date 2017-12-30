@@ -17,11 +17,15 @@ public class DoubleParser {
     }
 
     public static Double toDouble(Object value) {
-        if (isNull(value)) return null;
-        if (isDouble(value)) return (Double) value;
-        if (isNumber(value) && isInDoubleRange((Number)value))
-            return toBigDecimal(value).doubleValue();
+        if (isNull(value) || isDouble(value)) {
+            return (Double) value;
+        }
 
-        return null;
+        Double converted = null;
+        if (isNumber(value) && isInDoubleRange((Number)value)) {
+            converted = toBigDecimal(value).doubleValue();
+        }
+
+        return converted;
     }
 }

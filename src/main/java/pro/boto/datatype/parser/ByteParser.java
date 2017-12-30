@@ -17,11 +17,14 @@ public class ByteParser {
     }
 
     public static Byte toByte(Object value) {
-        if (isNull(value)) return null;
-        if (isByte(value)) return (Byte) value;
-        if (isNumber(value) && isInByteRange((Number)value))
+        if (isNull(value) || isByte(value)) {
+            return (Byte) value;
+        }
+        Byte converted = null;
+        if (isNumber(value) && isInByteRange((Number)value)) {
             return toBigInteger(value).byteValueExact();
+        }
 
-        return null;
+        return converted;
     }
 }
