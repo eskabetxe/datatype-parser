@@ -83,8 +83,7 @@ public class NumberParser {
 
     protected static boolean isInRange(Number number, BigInteger min, BigInteger max) {
         try {
-            BigInteger bigInteger = toBigInteger(number);
-            return max.compareTo(bigInteger) >= 0 && min.compareTo(bigInteger) <= 0;
+            return isInRange((Comparable) toBigInteger(number), min, max);
         } catch (NumberFormatException e) {
             return false;
         }
@@ -92,11 +91,15 @@ public class NumberParser {
 
     protected static boolean isInRange(Number number, BigDecimal min, BigDecimal max) {
         try {
-            BigDecimal bigDecimal = toBigDecimal(number);
-            return max.compareTo(bigDecimal) >= 0 && min.compareTo(bigDecimal) <= 0;
+            return isInRange((Comparable) toBigDecimal(number), min, max);
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    private static boolean isInRange(Comparable number, Comparable min, Comparable max) {
+        final int IN_RANGE = 0;
+        return max.compareTo(number) >= IN_RANGE && min.compareTo(number) <= IN_RANGE;
     }
 
     public static BigInteger toBigInteger(Object value) {
@@ -122,9 +125,9 @@ public class NumberParser {
         BigDecimal number;
         if (isBigDecimal(value)) {
             number = (BigDecimal)value;
-        }if (isBigInteger(value)) {
+        } else if (isBigInteger(value)) {
             number = new BigDecimal((BigInteger) value);
-        } if (isComplementInteger(value)) {
+        } else if (isComplementInteger(value)) {
             number = new BigDecimal(((Number)value).longValue());
         } else if (isFloatingPoint(value)) {
             number = new BigDecimal(((Number)value).doubleValue());
