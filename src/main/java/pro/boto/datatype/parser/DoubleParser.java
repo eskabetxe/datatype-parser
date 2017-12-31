@@ -3,8 +3,8 @@ package pro.boto.datatype.parser;
 import org.apache.commons.lang3.ObjectUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
-import static pro.boto.datatype.parser.NumberParser.isInDoubleRange;
-import static pro.boto.datatype.parser.NumberParser.toBigDecimal;
+import static pro.boto.datatype.classifiers.NumberClassifier.isInDoubleRange;
+import static pro.boto.datatype.parser.BigDecimalParser.toBigDecimal;
 
 public class DoubleParser {
 

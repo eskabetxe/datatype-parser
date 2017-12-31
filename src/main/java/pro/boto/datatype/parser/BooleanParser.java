@@ -4,6 +4,7 @@ import org.apache.commons.lang3.ObjectUtils;
 
 import static org.apache.commons.lang3.BooleanUtils.toBooleanObject;
 import static pro.boto.datatype.classifiers.Classifier.*;
+import static pro.boto.datatype.parser.IntegerParser.toInteger;
 
 public final class BooleanParser {
 
@@ -22,7 +23,7 @@ public final class BooleanParser {
 
         Boolean converted = null;
         if (isNumber(value)) {
-            converted = toBooleanObject(NumberParser.toInteger(value));
+            converted = toBooleanObject(toInteger(value));
         } else if (isString(value)) {
             converted = toBooleanObject((String)value);
         }

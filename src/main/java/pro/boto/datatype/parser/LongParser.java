@@ -3,8 +3,8 @@ package pro.boto.datatype.parser;
 import org.apache.commons.lang3.ObjectUtils;
 
 import static pro.boto.datatype.classifiers.Classifier.*;
-import static pro.boto.datatype.parser.NumberParser.isInLongRange;
-import static pro.boto.datatype.parser.NumberParser.toBigInteger;
+import static pro.boto.datatype.classifiers.NumberClassifier.isInLongRange;
+import static pro.boto.datatype.parser.BigIntegerParser.toBigInteger;
 
 public class LongParser {
 

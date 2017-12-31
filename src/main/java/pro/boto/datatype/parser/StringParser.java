@@ -2,8 +2,12 @@ package pro.boto.datatype.parser;
 
 import java.text.NumberFormat;
 
-import static pro.boto.datatype.classifiers.Classifier.*;
-import static pro.boto.datatype.parser.NumberParser.*;
+import static pro.boto.datatype.classifiers.Classifier.isNull;
+import static pro.boto.datatype.classifiers.Classifier.isString;
+import static pro.boto.datatype.classifiers.NumberClassifier.isComplementInteger;
+import static pro.boto.datatype.classifiers.NumberClassifier.isFloatingPoint;
+import static pro.boto.datatype.parser.BigDecimalParser.toBigDecimal;
+import static pro.boto.datatype.parser.BigIntegerParser.toBigInteger;
 
 public class StringParser {
 
