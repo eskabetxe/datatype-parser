@@ -6,7 +6,7 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 import static pro.boto.datatype.classifiers.NumberClassifier.isInIntegerRange;
 import static pro.boto.datatype.parser.BigIntegerParser.toBigInteger;
 
-public class IntegerParser  {
+public final class IntegerParser  {
 
     private static final int DEFAULT_VALUE = 0;
 

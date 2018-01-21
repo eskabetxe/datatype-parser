@@ -5,7 +5,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import static pro.boto.datatype.classifiers.Classifier.isChar;
 import static pro.boto.datatype.classifiers.Classifier.isNull;
 
-public class CharParser {
+public final class CharParser {
 
     private static final char DEFAULT_VALUE = '\u0000';
 

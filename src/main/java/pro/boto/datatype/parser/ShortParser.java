@@ -6,7 +6,7 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 import static pro.boto.datatype.classifiers.NumberClassifier.isInShortRange;
 import static pro.boto.datatype.parser.BigIntegerParser.toBigInteger;
 
-public class ShortParser {
+public final class ShortParser {
 
     private static final short DEFAULT_VALUE = 0;
 

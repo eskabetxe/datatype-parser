@@ -1,8 +1,6 @@
 package pro.boto.datatype.parser;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -10,7 +8,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(JUnitPlatform.class)
 public class BigDecimalParserTest {
 
     @Test

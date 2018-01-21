@@ -9,7 +9,7 @@ import static pro.boto.datatype.classifiers.NumberClassifier.isFloatingPoint;
 import static pro.boto.datatype.parser.BigDecimalParser.toBigDecimal;
 import static pro.boto.datatype.parser.BigIntegerParser.toBigInteger;
 
-public class StringParser {
+public final class StringParser {
 
     private StringParser() {}
 
@@ -23,8 +23,9 @@ public class StringParser {
             converted = NumberFormat.getInstance().format(toBigInteger(value));
         } else if (isFloatingPoint(value)) {
             converted = NumberFormat.getInstance().format(toBigDecimal(value));
+        } else if (value instanceof byte[]){
+            converted = new String((byte[]) value);
         }
-
         return converted;
     }
 }

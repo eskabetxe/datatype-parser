@@ -6,7 +6,7 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 import static pro.boto.datatype.classifiers.NumberClassifier.isInDoubleRange;
 import static pro.boto.datatype.parser.BigDecimalParser.toBigDecimal;
 
-public class DoubleParser {
+public final class DoubleParser {
 
     private static final double DEFAULT_VALUE = 0D;
 

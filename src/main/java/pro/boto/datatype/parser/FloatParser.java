@@ -6,7 +6,7 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 import static pro.boto.datatype.classifiers.NumberClassifier.isInFloatRange;
 import static pro.boto.datatype.parser.BigDecimalParser.toBigDecimal;
 
-public class FloatParser {
+public final class FloatParser {
 
     private static final float DEFAULT_VALUE = 0.0F;
 

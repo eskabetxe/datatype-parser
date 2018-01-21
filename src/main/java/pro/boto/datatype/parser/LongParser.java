@@ -6,7 +6,7 @@ import static pro.boto.datatype.classifiers.Classifier.*;
 import static pro.boto.datatype.classifiers.NumberClassifier.isInLongRange;
 import static pro.boto.datatype.parser.BigIntegerParser.toBigInteger;
 
-public class LongParser {
+public final class LongParser {
 
     private static final long DEFAULT_VALUE = 0L;
 
