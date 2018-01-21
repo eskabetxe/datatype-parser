@@ -90,10 +90,10 @@ public class ShortParserTest {
     private void assertThat(Object value, Short values) {
         assertThat(value,values.shortValue(),values);
     }
+
     private void assertThat(Object value, short primitive, Short wrapper) {
         assertEquals(primitive, ShortParser.toPrimitive(value), "primitive not expected");
         assertEquals(wrapper, ShortParser.toShort(value), "wrapper not expected");
     }
-
 
 }

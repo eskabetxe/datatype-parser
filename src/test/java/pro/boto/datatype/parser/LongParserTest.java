@@ -90,10 +90,10 @@ public class LongParserTest {
     private void assertThat(Object value, Long values) {
         assertThat(value,values.longValue(),values);
     }
+
     private void assertThat(Object value, long primitive, Long wrapper) {
         assertEquals(primitive, LongParser.toPrimitive(value), "primitive not expected");
         assertEquals(wrapper, LongParser.toLong(value), "wrapper not expected");
     }
-
 
 }

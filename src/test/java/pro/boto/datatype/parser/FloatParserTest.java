@@ -90,10 +90,10 @@ public class FloatParserTest {
     private void assertThat(Object value, Float values) {
         assertThat(value, values.floatValue(), values);
     }
+
     private void assertThat(Object value, float primitive, Float wrapper) {
         assertEquals(primitive, FloatParser.toPrimitive(value), "primitive not expected");
         assertEquals(wrapper, FloatParser.toFloat(value), "wrapper not expected");
     }
-
 
 }

@@ -74,6 +74,7 @@ public class IntegerParserTest {
         assertThat(Long.MIN_VALUE, INTEGER_0, INTEGER_NULL);
         assertThat(Long.MAX_VALUE, INTEGER_0, INTEGER_NULL);
     }
+
     @Test
     public void whenFloatValue() {
         assertThat(-Float.MAX_VALUE, INTEGER_0, INTEGER_NULL);
@@ -89,10 +90,10 @@ public class IntegerParserTest {
     private void assertThat(Object value, Integer values) {
         assertThat(value,values.intValue(),values);
     }
+
     private void assertThat(Object value, int primitive, Integer wrapper) {
         assertEquals(primitive, IntegerParser.toPrimitive(value), "primitive not expected");
         assertEquals(wrapper, IntegerParser.toInteger(value), "wrapper not expected");
     }
-
 
 }
