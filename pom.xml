@@ -6,7 +6,7 @@
 
     <groupId>pro.boto</groupId>
     <artifactId>datatype-parser</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
 
     <packaging>jar</packaging>
     <name>datatype parser</name>
@@ -36,6 +36,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.javaVersion>1.8</project.build.javaVersion>
+        <commonlang3.version>3.7</commonlang3.version>
         <junit.jupiter.version>5.0.2</junit.jupiter.version>
         <junit.platform.version>1.0.2</junit.platform.version>
     </properties>
@@ -44,7 +45,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.7</version>
+            <version>${commonlang3.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>

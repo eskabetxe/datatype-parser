@@ -11,7 +11,7 @@ import static pro.boto.datatype.parser.BigIntegerParser.toBigInteger;
 
 public final class StringParser {
 
-    private StringParser() {}
+    private StringParser() { }
 
     public static String toString(Object value) {
         if (isNull(value) || isString(value)) {
