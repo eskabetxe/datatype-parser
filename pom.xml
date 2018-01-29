@@ -6,7 +6,7 @@
 
     <groupId>pro.boto</groupId>
     <artifactId>datatype-parser</artifactId>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>
     <name>datatype parser</name>
